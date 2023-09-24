@@ -169,15 +169,26 @@ const catsData = [
   },
 ];
 
+const emotionRadios = document.querySelector("#emotion-radios");
 
-function getEmotionsArray(cats){
-    const emotionsArray = [];
-    for (let cat of cats){
-        for (let emotion of cat.emotionTags){
-            emotionsArray.push(emotion);
-        }
+function getEmotionsArray(cats) {
+  const emotionsArray = [];
+  for (let cat of cats) {
+    for (let emotion of cat.emotionTags) {
+      emotionsArray.push(emotion);
     }
+  }
 
-return emotionsArray;
-
+  return emotionsArray;
 }
+
+function renderEmotionsRadios(cats) {
+  let radioItems = ``;
+  const emotions = getEmotionsArray(cats);
+  for (let emotion of emotions) {
+    radioItems += `<p>${emotion}</p>`;
+  }
+  emotionRadios.innerHTML = radioItems;
+}
+
+renderEmotionsRadios(catsData);
