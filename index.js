@@ -1,6 +1,17 @@
 import { catsData } from "/data.js";
 const emotionRadios = document.querySelector("#emotion-radios");
 
+emotionRadios.addEventListener('change', highlightCheckedOption)
+
+function highlightCheckedOption(e){
+
+   document.getElementById(e.target.id).classList.add('highlight');
+
+
+  
+}
+
+
 function getEmotionsArray(cats) {
   const emotionsArray = [];
   for (let cat of cats) {
@@ -9,9 +20,6 @@ function getEmotionsArray(cats) {
         if (!emotionsArray.includes(emotion)){
             emotionsArray.push(emotion);   
         }
-
-
-
 
       
     }
