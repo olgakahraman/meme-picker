@@ -5,6 +5,11 @@ const getImageBtn = document.querySelector("#get-image-btn");
 const gifsOnlyOption = document.querySelector("#gifs-only-option");
 const memeModalInner = document.querySelector("#meme-modal-inner");
 const memeModal = document.querySelector("#meme-modal");
+const memeModalCloseBtn = document.querySelector("#meme-modal-close-btn");
+
+memeModalCloseBtn.addEventListener("click", function(){
+  memeModal.style.display = "none";
+})
 
 emotionRadios.addEventListener("change", highlightCheckedOption);
 
