@@ -41,13 +41,19 @@ return matchingCatsArray;
 
 function getSingleCatObject(){
 
-  const catsArray = getMatchingCatsArray()
+  const catsArray = getMatchingCatsArray();
 
   if (catsArray.length === 1){
-    console.log(catsArray[0])
+    console.log(catsArray[0]);
+  }else{
+    const randomNumber = Math.floor(Math.random() * catsArray.length);
+    console.log(catsArray[randomNumber]);
   }
 }
+function renderCat() {
 
+  getSingleCatObject();
+}
 
 
 function getEmotionsArray(cats) {
